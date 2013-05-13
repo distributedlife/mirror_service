@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+sourceCompatibility = "1.6"
+
+dependencies {
+    compile fileTree(dir: 'lib/runtime', include: '*.jar')
+    testCompile fileTree(dir: 'lib/test', include: '*.jar')
+
+}
+
+mainClassName = 'com.distributedlife.mirror.MirrorService'
+
+idea {
+    project {
+        languageLevel = sourceCompatibility
+    }
+
+    module {
+        name = 'mirror'
+    }
+}
